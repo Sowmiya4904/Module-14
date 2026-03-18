@@ -1,42 +1,25 @@
-# Exp.No:40  
-## APPLICATIONS OF QUEUE
+# Exp.No:35 TOWER OF HANOI
+# AIM
+To write a Python program to implement Tower of Hanoi and display all the moves of the disks using a recursive function. Consider the names of the tower pegs as A, B, C. Get the number of disks value from the user.
 
----
+# ALGORITHM
+Start the program. Input the number of disks n. Print the number of disks. Define a recursive function TowerOfHanoi(n, source, destination, auxiliary): If n == 1: Print: "Move disk from source to destination". Else: Call TowerOfHanoi(n - 1, source, auxiliary, destination) → Move n-1 disks from source to auxiliary using destination as helper. Print: "Move disk from source to destination" → Move the largest disk to the destination. Call TowerOfHanoi(n - 1, auxiliary, destination, source) → Move n-1 disks from auxiliary to destination using source as helper. Call TowerOfHanoi(n, 'A', 'C', 'B') to start the process. End the program.
 
-### AIM  
-To write a Python program to implement CPU Process Scheduling using a queue.
+# PROGRAM
+~~~
+Reg - 212222020028 Name - Sowmiya G
 
----
+def TowerOfHanoi(n, source, destination, auxiliary):
+    if (n > 0):
+        TowerOfHanoi(n-1, source, auxiliary, destination)   # Step 1: move n-1 disks
+        print("Move disk from", source, "to", destination)  # Step 2: move the nth disk
+        TowerOfHanoi(n-1, auxiliary, destination, source)   # Step 3: move n-1 disks
 
-### ALGORITHM  
+n = int(input())
+print("No. of disks =", n)
+~~~
+# OUTPUT
+<img width="968" height="933" alt="image" src="https://github.com/user-attachments/assets/e348e679-8a65-46ba-94cd-320e8f437422" />
 
-1. Start the program.  
-2. Define the function `CalculateWaitingTime(at, bt, N)`.  
-3. Initialize a list `wt` of size `N` with all values set to 0.  
-4. Set `wt[0] = 0` for the first process.  
-5. Print the table header: "P.No.", "Arrival Time", "Burst Time", "Waiting Time".  
-6. Print the values for the first process.  
-7. For each process from index `1` to `N-1`:  
-   - Calculate `wt[i] = (at[i - 1] + bt[i - 1] + wt[i - 1]) - at[i]`.  
-   - Print the process number, arrival time, burst time, and waiting time.  
-8. Initialize `total_waiting_time = 0`.  
-9. Add up all waiting times.  
-10. Calculate average waiting time as `average = total_waiting_time / N`.  
-11. Print the average waiting time.  
-12. Get burst times as input from the user for 5 processes.  
-13. Call `CalculateWaitingTime()` with `at`, `bt`, and `N`.  
-14. End the program.
-
----
-
-### PROGRAM  
-
-```
-
-```
-
-### OUTPUT
-
-
-### RESULT
-
+# RESULT 
+Thus the program to implement Tower of Hanoi has been implemented and executed successfully.
